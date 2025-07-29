@@ -2,14 +2,25 @@ from machine import Pin
 
 from utime import sleep 
 
-print("Hello World!")
+print("PROGRAMA DE SEMAFORO DO RAEL")
 
-led = Pin(15, Pin.OUT)
+ledVerde = Pin(15, Pin.OUT)
+ledAmarelo = Pin(18, Pin.OUT)
+ledVermelho = Pin(4, Pin.OUT)
 
 while True :
-    led.on()
-    print("Led ON!")
+    ledVerde.on()
+    sleep(20)
+    ledVerde.off()
     sleep(0.5)
-    led.off()
-    print("led OFF!")
+
+    ledAmarelo.on()
+    sleep(10)
+    ledAmarelo.off()
     sleep(0.5)
+
+    ledVermelho.on()
+    sleep(7)
+    ledVermelho.off()
+    sleep(0.5)
+    
